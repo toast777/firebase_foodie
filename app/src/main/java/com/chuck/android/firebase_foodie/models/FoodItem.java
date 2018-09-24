@@ -1,35 +1,31 @@
 package com.chuck.android.firebase_foodie.models;
 
-import java.util.UUID;
-
 public class FoodItem {
-    private String id;
-    private String itemName;
-    private int imgSrc;
+    private String name;
+    private String imgSrc;
     private double price;
-    private double customPrice;
+    private boolean allowAddOns;
+    private int numAddOns;
 
-    public FoodItem( String itemName, Integer imgSrc, double price, double customPrice) {
-        this.id = UUID.randomUUID().toString();
-        this.itemName = itemName;
+
+    public FoodItem( String name, String imgSrc, double price,boolean allowAddOns,int numAddOns) {
+        this.name = name;
         this.imgSrc = imgSrc;
         this.price = price;
-        this.customPrice = customPrice;
+        this.allowAddOns = allowAddOns;
+        this.numAddOns = numAddOns;
+    }
+    public FoodItem(){
+        // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public String getItemName() {
-        return itemName;
-    }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
 
-    public int getImgSrc() {
+    public String getImgSrc() {
         return imgSrc;
     }
 
-    public void setImgSrc(int imgSrc) {
+    public void setImgSrc(String imgSrc) {
         this.imgSrc = imgSrc;
     }
 
@@ -41,16 +37,27 @@ public class FoodItem {
         this.price = price;
     }
 
-    public double getCustomPrice() {
-        return customPrice;
+    public String getName() {
+        return name;
     }
 
-    public void setCustomPrice(double customPrice) {
-        this.customPrice = customPrice;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getId() {
-        return id;
+    public boolean isAllowAddOns() {
+        return allowAddOns;
     }
-    public void setId(String id) {this.id = id;}
+
+    public void setAllowAddOns(boolean allowAddOns) {
+        this.allowAddOns = allowAddOns;
+    }
+
+    public int getNumAddOns() {
+        return numAddOns;
+    }
+
+    public void setNumAddOns(int numAddOns) {
+        this.numAddOns = numAddOns;
+    }
 }
