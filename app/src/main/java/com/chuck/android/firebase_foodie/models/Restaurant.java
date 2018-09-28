@@ -1,5 +1,6 @@
 package com.chuck.android.firebase_foodie.models;
 
+//May not need this
 public class Restaurant {
     private int id;
     private String Name;
@@ -11,6 +12,7 @@ public class Restaurant {
         Name = name;
         Address = address;
     }
+    public Restaurant() {}
 
     public int getId() {
         return id;
